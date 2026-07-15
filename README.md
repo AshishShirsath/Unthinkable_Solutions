@@ -75,7 +75,7 @@
 
 ### Entity Relationship Overview
 
-```<img width="2560" height="1880" alt="image" src="https://github.com/user-attachments/assets/adcb844c-aed3-455a-a5bf-565db84b5eda" />
+```
 
 ```
 
