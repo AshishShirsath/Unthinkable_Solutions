@@ -78,7 +78,7 @@
 ```
 # ER Diagram
 
-[![ER Diagram](uploads/Erdiagram.png)](uploads/Erdiagram.png)
+![ER Diagram](https://raw.githubusercontent.com/AshishShirsath/Unthinkable_Solutions/main/uploads/Erdiagram.png)
 ```
 
 ---
