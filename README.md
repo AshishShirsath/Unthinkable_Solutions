@@ -78,7 +78,7 @@
 ```
 # ER Diagram
 
-![ER Diagram](uploads/Erdiagram.png)
+[![ER Diagram](uploads/Erdiagram.png)](uploads/Erdiagram.png)
 ```
 
 ---
