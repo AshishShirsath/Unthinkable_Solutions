@@ -1,0 +1,59 @@
+############################
+# IntelliJ
+############################
+.idea/
+*.iml
+
+############################
+# VS Code
+############################
+.vscode/
+
+############################
+# Mac
+############################
+.DS_Store
+
+############################
+# Spring Boot / Maven
+############################
+target/
+.mvn/wrapper/maven-wrapper.jar
+
+############################
+# Logs
+############################
+*.log
+logs/
+
+############################
+# Environment / Secrets
+############################
+.env
+.env.*
+application-local.yml
+application-secret.yml
+
+############################
+# Angular
+############################
+frontend/node_modules/
+frontend/dist/
+frontend/out-tsc/
+frontend/.angular/
+frontend/coverage/
+frontend/.ng/
+
+############################
+# Node
+############################
+frontend/package-lock.json
+frontend/yarn.lock
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
+############################
+# TypeScript
+############################
+*.tsbuildinfo

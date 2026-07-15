@@ -1,0 +1,56 @@
+spring:
+  application:
+    name: rent-flatmate-finder
+
+  datasource:
+    url: jdbc:mysql://${DB_HOST:13.234.48.249}:${DB_PORT:3306}/${DB_NAME:rent_flatmate_finder}
+    username: ${DB_USERNAME:rentuser}
+    password: ${DB_PASSWORD:changeme}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${MAIL_USERNAME:your-email@gmail.com}
+    password: ${MAIL_PASSWORD:your-app-password}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+jwt:
+  secret: ${JWT_SECRET:default_dev_secret_replace_in_production}
+  access-token-expiration: ${JWT_ACCESS_TOKEN_EXPIRATION:900000}
+  refresh-token-expiration: ${JWT_REFRESH_TOKEN_EXPIRATION:604800000}
+
+openai:
+  api-key: ${OPENAI_API_KEY:your-openai-api-key}
+  api-url: ${OPENAI_API_URL:https://api.openai.com/v1/chat/completions}
+  model: ${OPENAI_MODEL:gpt-4o-mini}
+  prompt: |-
+    You are a helpful room compatibility scoring assistant. Respond ONLY with valid JSON and nothing else.
+    Given this room listing: {title: "{title}", city: "{city}", locality: "{locality}", rent: {rent}, roomType: "{roomType}", furnishing: "{furnishing}"}
+    And this tenant profile: {preferredCity: "{preferredCity}", preferredLocality: "{preferredLocality}", minBudget: {minBudget}, maxBudget: {maxBudget}, description: "{description}"}
+    Compute a compatibility score from 0 to 100 based on budget and location match and return JSON exactly like: {"score": <number>, "explanation": "<string>"}
+
+app:
+  frontend-url: ${FRONTEND_URL:http://localhost:4200}
+  admin:
+    email: ${ADMIN_EMAIL:admin@rentflatmatefinder.com}
+    password: ${ADMIN_PASSWORD:Admin123!}
+    first-name: ${ADMIN_FIRST_NAME:Admin}
+    last-name: ${ADMIN_LAST_NAME:User}
+
+server:
+  port: ${SERVER_PORT:8080}
