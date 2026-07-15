@@ -78,7 +78,7 @@
 ```
 # ER Diagram
 
-![ER Diagram](https://raw.githubusercontent.com/AshishShirsath/Unthinkable_Solutions/main/uploads/Erdiagram.png)
+![image_alt](https://github.com/AshishShirsath/Unthinkable_Solutions/blob/18f34a530b35c70dc695452f781d7596b6a78e89/uploads/Erdiagram.png)
 ```
 
 ---
