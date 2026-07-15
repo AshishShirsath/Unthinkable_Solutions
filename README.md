@@ -31,6 +31,14 @@
 
 ---
 
+## Note 
+- **If you wish to login as admin :**
+- ADMIN_EMAIL=admin@rentflatmatefinder.com
+- ADMIN_PASSWORD=Admin123!
+- ADMIN_FIRST_NAME=Admin
+- ADMIN_LAST_NAME=User
+
+---
 ## 🧩 Project Overview
 
 **Rent & Flatmate Finder** is a two-sided marketplace where:
