@@ -8,10 +8,10 @@
 
 | Service | URL |
 |---------|-----|
-| **Frontend (Angular)** | `https://rentflatmate-frontend.vercel.app/` |
+| **Deployed app** | `https://rentflatmate-frontend.vercel.app/` |
 | **Backend API (Spring Boot)** | `https://rentflatmate-backend.onrender.com` |
-| **Swagger / OpenAPI Docs** | `<http://13.234.48.249:3306:8080/swagger-ui.html` |
-| **At-one-place (Backend and Frontend)** | `https://rentflatmatefinder.onrender.com/`
+| **Swagger / OpenAPI Docs** | `http://13.234.48.249:3306:8080/swagger-ui.html` |
+| **Alternative** | `https://rentflatmatefinder.onrender.com/`
 | **MySQL DB Host (AWS EC2)** | `13.234.48.249:3306` |
 
 ---
@@ -430,10 +430,6 @@ CREATE TABLE compatibility_scores (
 
 ## 🔑 Environment Variables — .env Reference
 
-Copy `.env.example` to `.env` and fill in your real values.
-**Never commit `.env` to git.**
-
-The backend reads every variable below via `application.yml` using Spring's `${VAR:default}` syntax.
 
 ```bash
 # ============================================================
@@ -533,7 +529,7 @@ cd rent-flatmate-finder
 ```bash
 # Root of the project
 cp .env.example .env
-# Open .env and fill in your DB password, SMTP, JWT secret, OpenAI key
+# Open .env and fill in your DB password, SMTP, JWT secret, OpenAI key available in the zip file
 ```
 
 ### 3 · Local Database
