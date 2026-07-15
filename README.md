@@ -78,7 +78,9 @@
 ```
 # ER Diagram
 
-![image alt](uploads/Erdiagram.png)
+<p align="center">
+  <img src="uploads/ER_Diagram_README.png" alt="ER Diagram" width="100%">
+</p>
 ```
 
 ---
