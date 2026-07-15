@@ -8,9 +8,10 @@
 
 | Service | URL |
 |---------|-----|
-| **Frontend (Angular)** | `<!-- TODO: paste deployed frontend URL here -->` |
-| **Backend API (Spring Boot)** | `<!-- TODO: paste deployed backend URL here -->` |
-| **Swagger / OpenAPI Docs** | `<!-- TODO: http://<EC2-IP>:8080/swagger-ui.html -->` |
+| **Frontend (Angular)** | `https://rentflatmate-frontend.vercel.app/` |
+| **Backend API (Spring Boot)** | `https://rentflatmate-backend.onrender.com` |
+| **Swagger / OpenAPI Docs** | `<http://13.234.48.249:3306:8080/swagger-ui.html` |
+| **At-one-place (Backend and Frontend)** | `https://rentflatmatefinder.onrender.com/`
 | **MySQL DB Host (AWS EC2)** | `13.234.48.249:3306` |
 
 ---
@@ -74,18 +75,8 @@
 
 ### Entity Relationship Overview
 
-```
-roles --< users --< refresh_tokens
-               |
-               +--> listings --< listing_images
-               |         |
-               |         +--> interest_requests --> chat_rooms --< chat_messages
-               |                     |
-               |               (tenant FK)
-               |
-               +--> tenant_profiles
-               |
-               +--> compatibility_scores (tenant FK + listing FK)
+```<img width="2560" height="1880" alt="image" src="https://github.com/user-attachments/assets/adcb844c-aed3-455a-a5bf-565db84b5eda" />
+
 ```
 
 ---
