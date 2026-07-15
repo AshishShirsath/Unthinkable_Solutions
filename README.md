@@ -524,7 +524,7 @@ Every variable maps 1-to-1 into `application.yml`:
 ### 1 · Clone the Repository
 
 ```bash
-git clone <YOUR_REPO_URL>
+git clone https://github.com/AshishShirsath/Unthinkable_Solutions
 cd rent-flatmate-finder
 ```
 
