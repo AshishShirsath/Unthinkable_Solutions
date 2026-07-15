@@ -74,13 +74,142 @@
 ---
 
 ### Entity Relationship Overview
+```mermaid
+erDiagram
 
-```
-# ER Diagram
+    ROLES ||--o{ USERS : "has"
+    USERS ||--o{ REFRESH_TOKENS : "owns"
+    USERS ||--o{ LISTINGS : "creates"
+    USERS ||--|| TENANT_PROFILES : "has"
+    USERS ||--o{ COMPATIBILITY_SCORES : "gets"
+    USERS ||--o{ INTEREST_REQUESTS : "sends"
+    USERS ||--o{ CHAT_ROOMS : "tenant"
+    USERS ||--o{ CHAT_ROOMS : "owner"
+    USERS ||--o{ CHAT_MESSAGES : "sends"
 
-<p align="center">
-  <img src="uploads/ER_Diagram_README.png" alt="ER Diagram" width="100%">
-</p>
+    LISTINGS ||--o{ LISTING_IMAGES : "contains"
+    LISTINGS ||--o{ INTEREST_REQUESTS : "receives"
+    LISTINGS ||--o{ COMPATIBILITY_SCORES : "has"
+
+    INTEREST_REQUESTS ||--|| CHAT_ROOMS : "creates"
+
+    CHAT_ROOMS ||--o{ CHAT_MESSAGES : "contains"
+
+    ROLES {
+        bigint id PK
+        varchar name
+        timestamp created_at
+        timestamp updated_at
+        boolean deleted
+    }
+
+    USERS {
+        bigint id PK
+        bigint role_id FK
+        varchar first_name
+        varchar last_name
+        varchar email
+        varchar password
+        varchar phone_number
+        boolean enabled
+        timestamp created_at
+        timestamp updated_at
+        boolean deleted
+    }
+
+    REFRESH_TOKENS {
+        bigint id PK
+        bigint user_id FK
+        varchar token
+        timestamp expiry_date
+        boolean revoked
+        timestamp created_at
+        timestamp updated_at
+        boolean deleted
+    }
+
+    TENANT_PROFILES {
+        bigint id PK
+        bigint user_id FK
+        varchar preferred_city
+        varchar preferred_locality
+        decimal min_budget
+        decimal max_budget
+        date move_in_date
+        text description
+        timestamp created_at
+        timestamp updated_at
+        boolean deleted
+    }
+
+    LISTINGS {
+        bigint id PK
+        bigint owner_id FK
+        varchar title
+        text description
+        varchar city
+        varchar locality
+        varchar address
+        decimal rent
+        decimal deposit
+        date available_from
+        varchar room_type
+        varchar furnishing_status
+        varchar status
+        timestamp created_at
+        timestamp updated_at
+        boolean deleted
+    }
+
+    LISTING_IMAGES {
+        bigint id PK
+        bigint listing_id FK
+        varchar image_url
+        timestamp created_at
+        timestamp updated_at
+        boolean deleted
+    }
+
+    COMPATIBILITY_SCORES {
+        bigint id PK
+        bigint tenant_id FK
+        bigint listing_id FK
+        int score
+        text explanation
+        boolean llm_used
+        timestamp computed_at
+    }
+
+    INTEREST_REQUESTS {
+        bigint id PK
+        bigint tenant_id FK
+        bigint listing_id FK
+        varchar status
+        int compatibility_score
+        text score_explanation
+        text message
+        timestamp created_at
+        timestamp updated_at
+        boolean deleted
+    }
+
+    CHAT_ROOMS {
+        bigint id PK
+        bigint interest_request_id FK
+        bigint tenant_id FK
+        bigint owner_id FK
+        timestamp created_at
+        timestamp updated_at
+        boolean deleted
+    }
+
+    CHAT_MESSAGES {
+        bigint id PK
+        bigint chat_room_id FK
+        bigint sender_id FK
+        text content
+        timestamp sent_at
+    }
 ```
 
 ---
