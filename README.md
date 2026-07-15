@@ -76,7 +76,9 @@
 ### Entity Relationship Overview
 
 ```
+# ER Diagram
 
+![ER Diagram](uploads/Erdiagram.png)
 ```
 
 ---
